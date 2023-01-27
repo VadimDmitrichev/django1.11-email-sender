@@ -1,0 +1,32 @@
+{% extends 'send_email/base.html' %}
+
+{% block content %}
+
+<h2 class="text-center my-5">Введите данные для того чтобы подписаться на нашу email рассылку</h2>
+{% if error %}
+<h3 class="text-center alert alert-danger">
+    {{ error }}
+    {% endif %}
+</h3>
+<div class="mx-auto my-5" style="width: 200px;">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="first_name">Имя</label>
+            <input type="text" name="first_name" class="form-control" id="first_name" required>
+        </div>
+        <div class="form-group">
+            <label for="last_name">Фамилия</label>
+            <input name="last_name" class="form-control" id="last_name"></input>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input name="email" class="form-control" id="email"></input>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+        </div>
+
+    </form>
+</div>
+{% endblock %}
