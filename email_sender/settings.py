@@ -1,3 +1,4 @@
+# coding=utf-8
 """
 Django settings for email_sender project.
 
@@ -115,7 +116,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-CELERY_BROKER_URL = '' # Ссылка на брокер celery для обработки очередей
+CELERY_BROKER_URL = ''  # Ссылка на брокер celery для обработки очередей
 
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
@@ -124,7 +125,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'vadya.dmitrichev26@gmail.com'
-EMAIL_HOST_PASSWORD = 'yefiixsllocoqkee' # пароль для тестового приложения email_sender, поэтому не использовал .env
+EMAIL_HOST_PASSWORD = 'yefiixsllocoqkee'  # пароль для тестового приложения email_sender, поэтому не использовал .env
 EMAIL_USE_TLS = True
 
 # Static files (CSS, JavaScript, Images)
@@ -136,5 +137,3 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 STATICFILES_DIRS = [
 	os.path.join(BASE_DIR, "static/"),
 ]
-
-
